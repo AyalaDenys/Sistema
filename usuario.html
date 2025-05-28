@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login e Cadastro</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .tabs {
+      display: flex;
+    }
+
+    .tabs label {
+      flex: 1;
+      padding: 15px;
+      text-align: center;
+      background: #f0f0f0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .tabs input[type="radio"] {
+      display: none;
+    }
+
+    #login:checked ~ .tabs label[for="login"],
+    #register:checked ~ .tabs label[for="register"] {
+      background: #fff;
+      font-weight: bold;
+    }
+
+    form {
+      padding: 20px;
+      display: none;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    #login:checked ~ .form-login,
+    #register:checked ~ .form-register {
+      display: block;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    small {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="radio" name="tab" id="login" checked>
+    <input type="radio" name="tab" id="register">
+
+    <div class="tabs">
+      <label for="login">Login</label>
+      <label for="register">Cadastro</label>
+    </div>
+
+    <!-- Formulário de Login -->
+    <form class="form-login">
+      <h2>Entrar</h2>
+      <input type="text" placeholder="Usuário ou E-mail" required>
+      <input type="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+      <small>Esqueceu a senha?</small>
+    </form>
+
+    <!-- Formulário de Cadastro -->
+    <form class="form-register">
+      <h2>Cadastrar</h2>
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="text" placeholder="CPF" required>
+      <input type="date" placeholder="Data de Nascimento" required>
+      
+      <select required>
+        <option value="">Sexo</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="outro">Outro</option>
+      </select>
+
+      <input type="text" placeholder="Endereço (Rua)" required>
+      <input type="text" placeholder="Bairro" required>
+      <input type="text" placeholder="Número da Casa" required>
+      <input type="text" placeholder="Cidade" required>
+
+      <select required>
+        <option value="">UF</option>
+        <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+        <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+        <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+        <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+        <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+        <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+        <option>SP</option><option>SE</option><option>TO</option>
+      </select>
+
+      <input type="text" placeholder="CEP" required>
+      <input type="tel" placeholder="Telefone" required>
+      <input type="password" placeholder="Senha" required>
+      <input type="password" placeholder="Confirmar Senha" required>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+</body>
+</html>
